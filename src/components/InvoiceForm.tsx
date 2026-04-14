@@ -89,7 +89,7 @@ const InvoiceForm = ({ setInvoiceData, setFocusedField }: {
         <div className="col-span-1">
           <label htmlFor="targetCurrency" className="block text-sm font-medium text-gray-700">目标货币</label>
           <select id="targetCurrency" className={inputClasses} defaultValue="">
-            <option value="">不需要目标货币</option>
+            <option value="">NA</option>
             <option>NGN</option>
             <option>CNY</option>
             <option>EUR</option>

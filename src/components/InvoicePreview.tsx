@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef } from 'react';
 import Image from 'next/image';
 import { numberToWords } from '@/utils/numberToWords';
