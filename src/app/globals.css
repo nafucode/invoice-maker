@@ -6,6 +6,11 @@ body {
   @apply bg-gray-50;
 }
 
+@page {
+  size: A4;
+  margin: 0;
+}
+
 @media print {
   body * {
     visibility: hidden;
@@ -18,5 +23,12 @@ body {
     left: 0;
     top: 0;
     width: 100%;
+    height: auto;
+    padding: 1cm 2cm; /* 1cm top/bottom, 2cm left/right */
+    box-sizing: border-box;
+  }
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
   }
 }

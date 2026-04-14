@@ -98,12 +98,12 @@ const InvoicePreview = forwardRef(({ invoiceData, focusedField }: { invoiceData:
       <div className="flex justify-between items-start p-1 border border-black border-t-0">
         <div className="p-1">
           <p><strong>Total:</strong></p>
-          <p className="uppercase">US DOLLARS {totalInWords}</p>
+          <p className="uppercase text-xs">US DOLLARS {totalInWords}</p>
         </div>
         <div className="text-right p-1">
           <p className="font-bold">$ {total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
           <p className={`font-bold ${focusedField === 'exchangeRate' ? highlightClass : ''}`}>
-            {targetCurrency || 'NGN'} {targetTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            {targetCurrency && `${targetCurrency} ${targetTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
           </p>
         </div>
       </div>
@@ -118,7 +118,7 @@ const InvoicePreview = forwardRef(({ invoiceData, focusedField }: { invoiceData:
         <DetailRow label="Destination:" value={destination} fieldId="destination" />
         <DetailRow label="Country of Origin:" value={countryOfOrigin} fieldId="countryOfOrigin" />
         
-        <p className="font-bold pt-2">Bank Information:</p>
+        <p className="font-bold pt-2 mt-2 border-t border-gray-300">Bank Information:</p>
         <DetailRow label="Beneficiary Bank:" value={beneficiaryBank} fieldId="beneficiaryBank" />
         <DetailRow label="A/C No:" value={accountNo} fieldId="accountNo" />
         <DetailRow label="Bank Address:" value={bankAddress} fieldId="bankAddress" />
