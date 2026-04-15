@@ -6,14 +6,11 @@ body {
   @apply bg-gray-50;
 }
 
-<<<<<<< HEAD
 @page {
   size: A4;
   margin: 0;
 }
 
-=======
->>>>>>> 8251bc004c520b424debc4f6b7aa9cf3edd943af
 @media print {
   body * {
     visibility: hidden;
@@ -26,7 +23,6 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-<<<<<<< HEAD
     height: auto;
     padding: 1cm 2cm; /* 1cm top/bottom, 2cm left/right */
     box-sizing: border-box;
@@ -34,7 +30,5 @@ body {
   html, body {
     height: auto !important;
     overflow: visible !important;
-=======
->>>>>>> 8251bc004c520b424debc4f6b7aa9cf3edd943af
   }
 }

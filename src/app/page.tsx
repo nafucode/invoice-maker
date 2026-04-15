@@ -10,9 +10,9 @@ export default function Home() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const previewRef = useRef<HTMLDivElement>(null);
 
-  const handlePrint = () => {
-    window.print();
-  };
+  const handlePrint = useReactToPrint({
+    contentRef: previewRef,
+  });
 
   return (
     <main className="p-8">
@@ -25,11 +25,9 @@ export default function Home() {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">预览区域</h2>
-              <button onClick={handlePrint} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                导出 PDF
-              </button>
+              <button onClick={handlePrint} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">导出 PDF</button>
             </div>
-            <div ref={previewRef} id="printable">
+            <div id="printable" ref={previewRef}>
               <InvoicePreview invoiceData={invoiceData} focusedField={focusedField} />
             </div>
           </div>

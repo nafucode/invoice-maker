@@ -1,10 +1,10 @@
 'use client';
 
-import React, { forwardRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { numberToWords } from '@/utils/numberToWords';
 
-const InvoicePreview = forwardRef(({ invoiceData, focusedField }: { invoiceData: any, focusedField: string | null }, ref: React.Ref<HTMLDivElement>) => {
+const InvoicePreview = ({ invoiceData, focusedField }: { invoiceData: any, focusedField: string | null }) => {
   const { 
     customerName, customerPhone, customerAddress, customerEmail, 
     contractNo, issueDate,
@@ -29,7 +29,7 @@ const InvoicePreview = forwardRef(({ invoiceData, focusedField }: { invoiceData:
   );
 
   return (
-    <div className="bg-white text-black text-sm" ref={ref}>
+    <div className="bg-white text-black text-sm">
       {/* Header Banner */}
       <div className="mb-2">
         <Image src="/logo-xinfuji.png" alt="Xinfuji Banner" width={1200} height={150} className="w-full h-auto" priority />
@@ -141,8 +141,6 @@ const InvoicePreview = forwardRef(({ invoiceData, focusedField }: { invoiceData:
       </div>
     </div>
   );
-});
-
-InvoicePreview.displayName = 'InvoicePreview';
+};
 
 export default InvoicePreview;
